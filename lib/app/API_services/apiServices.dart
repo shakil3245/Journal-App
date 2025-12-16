@@ -34,30 +34,6 @@ class ApiService {
     );
   }
 
-  //
-  // static Future<bool> register({
-  //   required String username,
-  //   required String email,
-  //   required String password,
-  //   required String role,
-  // }) async {
-  //   final apiUrl = Uri.parse("${AppConstants.baseUrl}/api/auth/register");
-  //   final response = await http.post(
-  //     apiUrl,
-  //     headers: {'Content-Type': 'application/json'},
-  //     body: jsonEncode({
-  //       "username": username,
-  //       "email": email,
-  //       "password": password,
-  //       "role": role,
-  //     }),
-  //   );
-  //
-  //   return response.statusCode == 200 || response.statusCode == 201;
-  // }
-
-
-
 
   //login test
 
