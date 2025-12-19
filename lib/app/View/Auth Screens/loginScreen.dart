@@ -19,6 +19,7 @@ class LoginScreen extends StatelessWidget {
   final TextEditingController passwordController = TextEditingController();
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
 
@@ -29,7 +30,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               SizedBox(height: 100),
-              Text("Welcome To Login",style: TextStyle(fontSize: 20,fontWeight:FontWeight.bold),),
+              Text("Welcome To Login",style: TextStyle(fontSize: 30,fontWeight:FontWeight.bold),),
               SizedBox(height: 90),
 
               TextFormField(

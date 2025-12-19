@@ -35,7 +35,10 @@ class PostPage extends StatelessWidget {
                 controller.createPost(
                   titleController.text.toString(),
                   descriptionController.text.toString(),
+
                 );
+                titleController.clear();
+                descriptionController.clear();
               },
                 child: customButton(buttonName: "Post",))),
           ],

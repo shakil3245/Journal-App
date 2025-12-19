@@ -59,16 +59,12 @@ class ApiService {
 
   //edn
 
-
-//fetch data
-  static Future<dynamic> fetchJournals() async {
+   Future<http.Response> fetchJournals() async {
     final token = await Storage.getToken();
-    final res = await http.get(Uri.parse("${AppConstants.baseUrl}/api/journals"), headers: {
+    return await http.get(Uri.parse("${AppConstants.baseUrl}/api/journals"),
+        headers: {
       'Authorization': 'Bearer $token',
     });
-    if (res.statusCode == 200) {
-      return journalsModelFromJson(res.body);
-    }
 
   }
   //post data

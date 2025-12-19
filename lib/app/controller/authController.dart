@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../API_services/apiServices.dart';
 import '../API_services/tokenStorage.dart';
 import '../View/Auth Screens/loginScreen.dart';
-import '../View/User/UserDashboard.dart';
+import '../View/User/UserHomeScreen.dart';
 import '../View/admin/AdminDashboard.dart';
 
 class AuthController extends GetxController {
@@ -28,7 +28,7 @@ class AuthController extends GetxController {
 
       if (response.statusCode == 200 || response.statusCode == 201) {
         Get.snackbar("Success", "Registration successful");
-        Get.back();
+        Get.offAll(LoginScreen());
       } else {
         Get.snackbar("Error", data['message'] ?? "Registration failed");
       }
@@ -55,7 +55,7 @@ class AuthController extends GetxController {
       if (result.role == 'admin') {
         Get.offAll(() => AdminDashboard());
       } else {
-        Get.offAll(() => UserDashboard());
+        Get.offAll(() => UserHomeScreen());
       }
     } else {
       Get.snackbar("Error", "Invalid credentials");
@@ -73,7 +73,7 @@ class AuthController extends GetxController {
       if (savedRole == 'admin') {
         Get.offAll(() => AdminDashboard());
       } else {
-        Get.offAll(() => UserDashboard());
+        Get.to( UserHomeScreen());
       }
     } else {
       Get.offAll(() => LoginScreen());
